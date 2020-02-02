@@ -1,4 +1,4 @@
-# Thread
+# Multithread
 
 Implement the ***BigInteger [] parallelComputeFunctions (BigInteger [] data, Function <BigInteger, BigInteger> [] functions, int threadCount)*** method in **ParallelCompute**. The method should return an array that contains exactly as many elements as data. The result of the function at index i of functions applied to the element of data at index i should be at each index i of the returned array. For this purpose <u>**threadCount** threads</u> should be created. Spread the load on the threads sensibly, i.e. **the number of calculations to be performed should be as similar as possible for the threads.**
 
