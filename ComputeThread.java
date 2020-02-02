@@ -11,7 +11,6 @@ public class ComputeThread extends Thread {
 	public int end;
 	public List<BigInteger> results = new ArrayList<>();
 	public int size;
-	//public BigInteger[]results = new BigInteger[end-start]; 
 	
 	public ComputeThread(BigInteger[] arr, int start, int end, Function<BigInteger, BigInteger> [] functions) {
 		this.arr = arr;
@@ -24,23 +23,13 @@ public class ComputeThread extends Thread {
 	public List<BigInteger> getResult() {
 		return results;
 	}
-	public void setResult(List<BigInteger> results) {
-		this.results = results;
-	}
 
 	@Override
-	public void run() {
-
-		// System.out.println("Running... start="+start+", end="+end+", results.size="+results.size());
-		
-		// while (start<end && start<results.size()) {
-		while (start<end) {			
-			// System.out.println("Current function: " + start);
+	public void run() {		
+		while (start<end) {	
+			System.out.println("Current processing index: " + start);		
 			results.add(functions[start].apply(arr[start]));
 			start++;
-			// System.out.println(results.toString());
 		}
 	}
-	
-	
 }

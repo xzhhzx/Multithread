@@ -15,16 +15,6 @@ public class ReduceThread extends Thread {
 		this.binOp = binOp;
 	}
 
-	// public BinaryOperator<BigInteger> getBinOp() {
-	// 	return binOp;
-	// }
-
-
-	// public void setBinOp(BinaryOperator<BigInteger> binOp2) {
-	// 	binOp2 = this.binOp;
-	// }
-
-
 	@Override
 	public void run() {
 		sub_result = arr[start];
@@ -32,6 +22,5 @@ public class ReduceThread extends Thread {
 			sub_result = binOp.apply(sub_result, arr[i]);
 		}
 		System.out.println("sub_result: "+sub_result);
-		// sub_result = sub_result.add(BigInteger.valueOf(100));
 	}
 }
